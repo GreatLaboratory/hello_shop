@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:log4jdbc:mysql://localhost:3306/jpa?serverTimezone=Asia/Seoul&useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 1234
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: false
+    open-in-view: false
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/jsp/
+
+---
+
+spring:
+  profiles: server
+  datasource:
+    url: jdbc:mysql://greatlaboratory2.cydn8qcpi5ax.ap-northeast-2.rds.amazonaws.com:3306/connectdb?serverTimezone=Asia/Seoul&useSSL=false
+    username: user
+    password: cartopia95
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+      open-in-view: false
+
