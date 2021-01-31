@@ -1,0 +1,7 @@
+/target
+/.idea
+/.mvn
+jpa-shop.iml
+mvnw
+HELP.md
+mvnw.cmd
